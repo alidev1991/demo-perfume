@@ -324,6 +324,30 @@
   background: radial-gradient(ellipse at 38% 28%, rgba(200, 169, 110, 0.1) 0%, transparent 62%);
 }
 
+.bottle-wrap--iranian {
+  --liq-top: #E08898;
+  --liq-bot: #B84060;
+  --liq-mid: #D46878;
+}
+
+.bottle-wrap--arabic {
+  --liq-top: #D4A020;
+  --liq-bot: #886010;
+  --liq-mid: #D4A832;
+}
+
+.bottle-wrap--european {
+  --liq-top: #9878C0;
+  --liq-bot: #6048A0;
+  --liq-mid: #A888D0;
+}
+
+.bottle-wrap--american {
+  --liq-top: #CC7830;
+  --liq-bot: #904010;
+  --liq-mid: #D48838;
+}
+
 .bottle-wrap--iranian::before {
   background: radial-gradient(ellipse at 38% 28%, rgba(210, 115, 65, 0.12) 0%, transparent 62%);
 }
