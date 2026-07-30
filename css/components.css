@@ -214,6 +214,45 @@
 
 
 /* ══════════════════════════════
+   کارت مؤسس (بخش معرفی)
+   ══════════════════════════════ */
+.about__founder {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-sm);
+  margin-bottom: var(--sp-md);
+  margin-top: var(--sp-xs);
+}
+
+.about__founder-line {
+  width: 36px;
+  height: 1px;
+  background-color: var(--c-gold);
+  flex-shrink: 0;
+}
+
+.about__founder-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.about__founder-name {
+  font-family: var(--f-brand);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--c-gold-light);
+  letter-spacing: 0.04em;
+}
+
+.about__founder-role {
+  font-size: 0.78rem;
+  color: var(--c-text-muted);
+  letter-spacing: 0.1em;
+}
+
+
+/* ══════════════════════════════
    پلیس‌هولدر (جایگزین تصویر)
    ══════════════════════════════ */
 .placeholder-box {
