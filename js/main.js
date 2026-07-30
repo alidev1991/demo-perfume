@@ -1,10 +1,45 @@
 /* ─────────────────────────────────────────
    REZVAN — main.js
-   Phase 2: nav scroll effect only
    ───────────────────────────────────────── */
 
+/* ── ناوبار: blur هنگام اسکرول ── */
 const nav = document.getElementById('nav');
 
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
+
+
+/* ── فیلتر دسته‌بندی محصولات ── */
+const filterTabs  = document.querySelectorAll('.filter-tab');
+const productCards = document.querySelectorAll('.product-card');
+
+filterTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    filterTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    const filter = tab.dataset.filter;
+
+    productCards.forEach(card => {
+      const match = filter === 'all' || card.dataset.category === filter;
+      card.classList.toggle('hidden', !match);
+    });
+  });
+});
+
+
+/* ── کلیک روی کارت دسته‌بندی → فیلتر محصولات ── */
+const collectionCards = document.querySelectorAll('.collection-card');
+
+collectionCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const filter = card.dataset.filter;
+    const matchingTab = document.querySelector(`.filter-tab[data-filter="${filter}"]`);
+
+    if (matchingTab) {
+      matchingTab.click();
+      document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});

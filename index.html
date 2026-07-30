@@ -13,12 +13,26 @@
 </head>
 <body>
 
-  <!-- ═══ تعریف SVG امضای بصری برند (دود عود) ═══ -->
+  <!-- ═══ تعریف SVGهای برند ═══ -->
   <svg style="display:none" aria-hidden="true">
+    <!-- امضای بصری: دود عود -->
     <symbol id="smoke" viewBox="0 0 40 100" preserveAspectRatio="xMidYMid meet">
       <path d="M20 98 C36 82 36 64 20 50 C4 36 4 18 20 2"
             stroke="currentColor" stroke-width="1.5" fill="none"
             stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- بطری عطر -->
+    <symbol id="bottle" viewBox="0 0 100 200" fill="none">
+      <rect x="35" y="4"  width="30" height="14" rx="4"  fill="#C8A96E" opacity="0.82"/>
+      <rect x="42" y="18" width="16" height="22" rx="2"  fill="#C8A96E" opacity="0.52"/>
+      <path d="M42 40 L22 58 L78 58 L58 40 Z"            fill="#C8A96E" opacity="0.36"/>
+      <rect x="20" y="58" width="60" height="118" rx="10" fill="#C8A96E" opacity="0.18"/>
+      <rect x="26" y="65" width="10"  height="96"  rx="5" fill="white"   opacity="0.05"/>
+      <rect x="28" y="80" width="44"  height="62"  rx="3"
+            stroke="#C8A96E" stroke-width="0.7" fill="none" opacity="0.4"/>
+      <rect x="36" y="96"  width="28" height="2.5" rx="1"    fill="#C8A96E" opacity="0.5"/>
+      <rect x="38" y="104" width="24" height="1.5" rx="0.75" fill="#C8A96E" opacity="0.3"/>
+      <rect x="40" y="110" width="20" height="1.5" rx="0.75" fill="#C8A96E" opacity="0.22"/>
     </symbol>
   </svg>
 
@@ -102,22 +116,55 @@
         <h2 class="section__title">دسته‌بندی محصولات</h2>
       </div>
       <div class="collections__grid">
-        <div class="collection-card">
-          <div class="collection-card__img placeholder-box">عطرهای ایرانی</div>
-          <h3 class="collection-card__title">ایرانی</h3>
+
+        <div class="collection-card" data-filter="iranian">
+          <div class="collection-card__visual">
+            <div class="bottle-wrap bottle-wrap--iranian">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+          </div>
+          <div class="collection-card__info">
+            <h3 class="collection-card__title">عطرهای ایرانی</h3>
+            <p class="collection-card__tag">گل، عود، مشک، ادویه</p>
+          </div>
         </div>
-        <div class="collection-card">
-          <div class="collection-card__img placeholder-box">عطرهای عربی</div>
-          <h3 class="collection-card__title">عربی</h3>
+
+        <div class="collection-card" data-filter="arabic">
+          <div class="collection-card__visual">
+            <div class="bottle-wrap bottle-wrap--arabic">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+          </div>
+          <div class="collection-card__info">
+            <h3 class="collection-card__title">عطرهای عربی</h3>
+            <p class="collection-card__tag">عود، کهربا، مسک، صمغ</p>
+          </div>
         </div>
-        <div class="collection-card">
-          <div class="collection-card__img placeholder-box">عطرهای اروپایی</div>
-          <h3 class="collection-card__title">اروپایی</h3>
+
+        <div class="collection-card" data-filter="european">
+          <div class="collection-card__visual">
+            <div class="bottle-wrap bottle-wrap--european">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+          </div>
+          <div class="collection-card__info">
+            <h3 class="collection-card__title">عطرهای اروپایی</h3>
+            <p class="collection-card__tag">گل، سیتروس، چوب، وانیل</p>
+          </div>
         </div>
-        <div class="collection-card">
-          <div class="collection-card__img placeholder-box">عطرهای آمریکایی</div>
-          <h3 class="collection-card__title">آمریکایی</h3>
+
+        <div class="collection-card" data-filter="american">
+          <div class="collection-card__visual">
+            <div class="bottle-wrap bottle-wrap--american">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+          </div>
+          <div class="collection-card__info">
+            <h3 class="collection-card__title">عطرهای آمریکایی</h3>
+            <p class="collection-card__tag">چوب، کهربا، مشک، اسانس</p>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -127,38 +174,233 @@
     <svg class="smoke smoke--md"><use href="#smoke"/></svg>
   </div>
 
-  <!-- ═══ محصولات نمونه ═══ -->
+  <!-- ═══ محصولات ═══ -->
   <section class="section products" id="products">
     <div class="container">
       <div class="section__head">
         <span class="section__label">محصولات</span>
-        <h2 class="section__title">نمونه محصولات</h2>
+        <h2 class="section__title">انتخابِ رضوان</h2>
       </div>
-      <div class="products__grid">
-        <div class="product-card">
-          <div class="product-card__img placeholder-box">بطری عطر</div>
+
+      <!-- فیلتر دسته‌بندی -->
+      <div class="filter-tabs" role="tablist">
+        <button class="filter-tab active" data-filter="all"      role="tab">همه</button>
+        <button class="filter-tab"        data-filter="iranian"  role="tab">ایرانی</button>
+        <button class="filter-tab"        data-filter="arabic"   role="tab">عربی</button>
+        <button class="filter-tab"        data-filter="european" role="tab">اروپایی</button>
+        <button class="filter-tab"        data-filter="american" role="tab">آمریکایی</button>
+      </div>
+
+      <div class="products__grid" id="products-grid">
+
+        <!-- ─ ایرانی ─ -->
+        <div class="product-card" data-category="iranian">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--iranian">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">ایرانی</span>
+          </div>
           <div class="product-card__body">
-            <h3 class="product-card__name">نام محصول</h3>
-            <p class="product-card__origin">ایران</p>
-            <p class="product-card__price">۱۲۰,۰۰۰ تومان</p>
+            <h3 class="product-card__name">گلِ محمدی</h3>
+            <p class="product-card__desc">عطری به شیرینی یک باغ بهاری در سپیده‌دم</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۵۰ میلی‌لیتر</span>
+              <span class="product-card__price">۱۸۵,۰۰۰ تومان</span>
+            </div>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-card__img placeholder-box">بطری عطر</div>
+
+        <div class="product-card" data-category="iranian">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--iranian">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">ایرانی</span>
+          </div>
           <div class="product-card__body">
-            <h3 class="product-card__name">نام محصول</h3>
-            <p class="product-card__origin">عربی</p>
-            <p class="product-card__price">۲۵۰,۰۰۰ تومان</p>
+            <h3 class="product-card__name">عودِ شیراز</h3>
+            <p class="product-card__desc">گرمای عود و رازِ تیره‌ی جنگل‌های جنوب ایران</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۱۰۰ میلی‌لیتر</span>
+              <span class="product-card__price">۴۳۰,۰۰۰ تومان</span>
+            </div>
           </div>
         </div>
-        <div class="product-card">
-          <div class="product-card__img placeholder-box">بطری عطر</div>
+
+        <div class="product-card" data-category="iranian">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--iranian">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">ایرانی</span>
+          </div>
           <div class="product-card__body">
-            <h3 class="product-card__name">نام محصول</h3>
-            <p class="product-card__origin">اروپایی</p>
-            <p class="product-card__price">۴۵۰,۰۰۰ تومان</p>
+            <h3 class="product-card__name">نسیمِ البرز</h3>
+            <p class="product-card__desc">تازگی کوهستان و هوای صبحگاهی در هر نفس</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۷۵ میلی‌لیتر</span>
+              <span class="product-card__price">۲۶۰,۰۰۰ تومان</span>
+            </div>
           </div>
         </div>
+
+        <!-- ─ عربی ─ -->
+        <div class="product-card" data-category="arabic">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--arabic">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">عربی</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">مسکِ الذهب</h3>
+            <p class="product-card__desc">سفیدترین مسک از قلبِ بیابان‌های عربستان</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۵۰ میلی‌لیتر</span>
+              <span class="product-card__price">۳۸۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="arabic">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--arabic">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">عربی</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">عودِ الملک</h3>
+            <p class="product-card__desc">رایحه‌ی شاهانه، تاجِ عطرهای خاورمیانه</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۱۰۰ میلی‌لیتر</span>
+              <span class="product-card__price">۶۸۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="arabic">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--arabic">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">عربی</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">خلوصِ عربی</h3>
+            <p class="product-card__desc">ناب‌ترین ترکیب کهربا و صمغ از دل صحرا</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۷۵ میلی‌لیتر</span>
+              <span class="product-card__price">۴۹۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ اروپایی ─ -->
+        <div class="product-card" data-category="european">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--european">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">اروپایی</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">رُز دو پاری</h3>
+            <p class="product-card__desc">یک گلبرگ پاریسی، نرم بر روی پوست</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۵۰ میلی‌لیتر</span>
+              <span class="product-card__price">۸۴۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="european">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--european">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">اروپایی</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">ولوت نویت</h3>
+            <p class="product-card__desc">شبِ مخملی با گرمای چوب‌های تاریک اروپا</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۱۰۰ میلی‌لیتر</span>
+              <span class="product-card__price">۱,۲۰۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="european">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--european">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">اروپایی</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">آمبر بلان</h3>
+            <p class="product-card__desc">ظریف‌ترین کهربای سفید از قلبِ میلان</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۷۵ میلی‌لیتر</span>
+              <span class="product-card__price">۹۶۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ آمریکایی ─ -->
+        <div class="product-card" data-category="american">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--american">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">آمریکایی</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">نیویورک نایت</h3>
+            <p class="product-card__desc">عطری با روحِ شهرِ بی‌خواب و خیابان‌های شبانه</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۱۰۰ میلی‌لیتر</span>
+              <span class="product-card__price">۸۸۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="american">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--american">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">آمریکایی</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">وودلند</h3>
+            <p class="product-card__desc">بوی جنگل پس از باران، آرامشِ بی‌انتها</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۵۰ میلی‌لیتر</span>
+              <span class="product-card__price">۶۴۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="american">
+          <div class="product-card__visual">
+            <div class="bottle-wrap bottle-wrap--american">
+              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
+            </div>
+            <span class="product-card__badge">آمریکایی</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">گلدن اَمبر</h3>
+            <p class="product-card__desc">گرمایِ کهربایی عمیق از دل غربِ دور</p>
+            <div class="product-card__footer">
+              <span class="product-card__volume">۷۵ میلی‌لیتر</span>
+              <span class="product-card__price">۷۲۰,۰۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

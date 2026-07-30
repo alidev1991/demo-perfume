@@ -304,31 +304,133 @@
 
 
 /* ══════════════════════════════
+   بطری عطر SVG (عنصر بصری مشترک)
+   ══════════════════════════════ */
+.bottle-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(158deg, #1c1408 0%, #0e0b07 100%);
+}
+
+.bottle-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 38% 28%, rgba(200, 169, 110, 0.1) 0%, transparent 62%);
+}
+
+.bottle-wrap--iranian::before {
+  background: radial-gradient(ellipse at 38% 28%, rgba(210, 115, 65, 0.12) 0%, transparent 62%);
+}
+
+.bottle-wrap--arabic::before {
+  background: radial-gradient(ellipse at 38% 28%, rgba(200, 169, 110, 0.16) 0%, transparent 62%);
+}
+
+.bottle-wrap--european::before {
+  background: radial-gradient(ellipse at 38% 28%, rgba(140, 115, 200, 0.1) 0%, transparent 62%);
+}
+
+.bottle-wrap--american::before {
+  background: radial-gradient(ellipse at 38% 28%, rgba(110, 160, 148, 0.1) 0%, transparent 62%);
+}
+
+.bottle-svg {
+  position: relative;
+  z-index: 1;
+  width: 50%;
+  max-height: 76%;
+  transition: transform 0.55s ease;
+}
+
+
+/* ══════════════════════════════
    کارت دسته‌بندی
    ══════════════════════════════ */
 .collection-card {
   overflow: hidden;
   border-radius: var(--radius);
   cursor: pointer;
+  background-color: var(--c-card);
+  border: 1px solid var(--c-border);
+  transition: border-color var(--ease), transform var(--ease);
 }
 
-.collection-card__img {
-  aspect-ratio: 3 / 4;
-  height: auto;
-  transition: transform 0.55s ease;
+.collection-card:hover {
+  border-color: rgba(200, 169, 110, 0.42);
+  transform: translateY(-4px);
 }
 
-.collection-card:hover .collection-card__img {
-  transform: scale(1.04);
+.collection-card__visual {
+  overflow: hidden;
+}
+
+.collection-card:hover .bottle-svg {
+  transform: scale(1.06) translateY(-4px);
+}
+
+.collection-card__info {
+  padding: var(--sp-sm) var(--sp-sm) var(--sp-md);
+  text-align: center;
 }
 
 .collection-card__title {
-  text-align: center;
-  padding: var(--sp-sm) 0 var(--sp-xs);
-  font-size: 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--c-gold-light);
+  margin-bottom: 5px;
+  letter-spacing: 0.03em;
+}
+
+.collection-card__tag {
+  font-family: var(--f-brand);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--c-text-muted);
+  letter-spacing: 0.1em;
+}
+
+
+/* ══════════════════════════════
+   فیلتر دسته‌بندی محصولات
+   ══════════════════════════════ */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-xs);
+  margin-bottom: var(--sp-lg);
+  flex-wrap: wrap;
+}
+
+.filter-tab {
+  padding: 9px 26px;
+  font-family: var(--f-primary);
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--c-text-muted);
+  background: transparent;
+  border: 1px solid var(--c-border);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all var(--ease);
+  letter-spacing: 0.06em;
+}
+
+.filter-tab:hover {
+  color: var(--c-gold-light);
+  border-color: rgba(200, 169, 110, 0.4);
+}
+
+.filter-tab.active {
+  background-color: var(--c-gold);
+  border-color: var(--c-gold);
+  color: var(--c-bg);
   font-weight: 400;
-  color: var(--c-text);
-  letter-spacing: 0.04em;
 }
 
 
@@ -348,13 +450,37 @@
 }
 
 .product-card:hover {
-  border-color: rgba(200, 169, 110, 0.5);
+  border-color: rgba(200, 169, 110, 0.48);
   transform: translateY(-5px);
 }
 
-.product-card__img {
-  border-radius: 0;
-  aspect-ratio: 3 / 4;
+.product-card.hidden {
+  display: none;
+}
+
+.product-card__visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card:hover .bottle-svg {
+  transform: scale(1.05) translateY(-6px);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: var(--sp-sm);
+  right: var(--sp-sm);
+  padding: 3px 10px;
+  font-family: var(--f-brand);
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--c-gold);
+  background-color: rgba(13, 10, 7, 0.72);
+  border: 1px solid var(--c-border);
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(4px);
 }
 
 .product-card__body {
@@ -364,22 +490,36 @@
 .product-card__name {
   font-size: 1rem;
   color: var(--c-gold-light);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
-.product-card__origin {
+.product-card__desc {
+  font-size: 0.83rem;
+  color: var(--c-text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--sp-sm);
+}
+
+.product-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--sp-sm);
+  border-top: 1px solid var(--c-border);
+}
+
+.product-card__volume {
   font-family: var(--f-brand);
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-style: italic;
   color: var(--c-text-muted);
-  letter-spacing: 0.12em;
-  margin-bottom: var(--sp-xs);
+  letter-spacing: 0.08em;
 }
 
 .product-card__price {
   font-weight: 600;
   color: var(--c-gold);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 
