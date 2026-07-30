@@ -1,0 +1,74 @@
+/* ═══════════════════════════════════════════════════════════
+   LAYOUT — کانتینر، بخش‌ها، گرید
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─ کانتینر ─ */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--sp-md);
+}
+
+/* ─ بخش پایه ─ */
+.section {
+  padding-block: var(--sp-xl);
+}
+
+/* ─ هدر بخش ─ */
+.section__head {
+  text-align: center;
+  margin-bottom: var(--sp-lg);
+}
+
+.section__label {
+  display: block;
+  font-family: var(--f-brand);
+  font-size: 0.95rem;
+  font-style: italic;
+  letter-spacing: 0.22em;
+  color: var(--c-gold);
+  margin-bottom: var(--sp-sm);
+}
+
+.section__title {
+  position: relative;
+}
+
+/* ─ گرید معرفی برند (۲ ستون) ─ */
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-lg);
+  align-items: center;
+}
+
+/* ─ گرید دسته‌بندی‌ها (۴ ستون) ─ */
+.collections__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-md);
+}
+
+/* ─ گرید محصولات (۳ ستون) ─ */
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-md);
+}
+
+/* ─ گرید نظرات (۳ ستون) ─ */
+.reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-md);
+}
+
+/* ─ جداکننده دود ─ */
+.smoke-sep {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: var(--sp-sm);
+  background-color: var(--c-bg);
+}

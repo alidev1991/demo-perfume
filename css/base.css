@@ -1,0 +1,110 @@
+/* ═══════════════════════════════════════════════════════════
+   BASE — متغیرها، ریست، تایپوگرافی پایه
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ─ نام برند (یک‌جا تعریف می‌شود) ─ */
+  --brand-fa: 'رضوان';
+  --brand-en: 'REZVAN';
+
+  /* ─ پالت رنگ ─ */
+  --c-bg:          #0D0A07;
+  --c-bg-alt:      #15110C;
+  --c-card:        #1E1810;
+  --c-gold:        #C8A96E;
+  --c-gold-light:  #E4CFA0;
+  --c-text:        #F0E6D3;
+  --c-text-muted:  #8A7B68;
+  --c-border:      rgba(200, 169, 110, 0.18);
+
+  /* ─ فونت‌ها ─ */
+  --f-primary: 'Vazirmatn', sans-serif;
+  --f-brand:   'Cormorant Garamond', serif;
+
+  /* ─ فاصله‌گذاری ─ */
+  --sp-xs:  8px;
+  --sp-sm:  16px;
+  --sp-md:  32px;
+  --sp-lg:  64px;
+  --sp-xl:  100px;
+
+  /* ─ متفرقه ─ */
+  --radius: 4px;
+  --ease:   0.3s ease;
+  --max-w:  1200px;
+}
+
+/* ─ ریست ─ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--f-primary);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.85;
+  background-color: var(--c-bg);
+  color: var(--c-text);
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─ تایپوگرافی ─ */
+h1 {
+  font-family: var(--f-primary);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.2;
+  color: var(--c-gold-light);
+}
+
+h2 {
+  font-family: var(--f-primary);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.3;
+  color: var(--c-gold-light);
+}
+
+h3 {
+  font-family: var(--f-primary);
+  font-weight: 600;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.4;
+  color: var(--c-gold-light);
+}
+
+p {
+  color: var(--c-text);
+  line-height: 1.9;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--ease);
+}
+
+a:hover {
+  color: var(--c-gold-light);
+}
+
+img,
+svg {
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+}

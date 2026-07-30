@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>رضوان — REZVAN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- ═══ تعریف SVG امضای بصری برند (دود عود) ═══ -->
+  <svg style="display:none" aria-hidden="true">
+    <symbol id="smoke" viewBox="0 0 40 100" preserveAspectRatio="xMidYMid meet">
+      <path d="M20 98 C36 82 36 64 20 50 C4 36 4 18 20 2"
+            stroke="currentColor" stroke-width="1.5" fill="none"
+            stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <!-- ═══ ناوبار ═══ -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <nav class="nav__menu">
+        <a href="#about"       class="nav__link">برند</a>
+        <a href="#collections" class="nav__link">مجموعه‌ها</a>
+        <a href="#products"    class="nav__link">محصولات</a>
+        <a href="#reviews"     class="nav__link">نظرات</a>
+        <a href="#footer"      class="nav__link">تماس</a>
+      </nav>
+      <a href="/" class="nav__logo" aria-label="صفحه اصلی رضوان">
+        <span class="nav__logo-fa">رضوان</span>
+        <span class="nav__logo-en">REZVAN</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ═══ هیرو ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero__smoke-bg" aria-hidden="true">
+      <svg class="smoke smoke--hero smoke--h1"><use href="#smoke"/></svg>
+      <svg class="smoke smoke--hero smoke--h2"><use href="#smoke"/></svg>
+      <svg class="smoke smoke--hero smoke--h3"><use href="#smoke"/></svg>
+    </div>
+    <div class="container hero__content">
+      <p class="hero__eyebrow">— عطر خالص، تجربه‌ای ماندگار —</p>
+      <h1 class="hero__title">عنوان اصلی برند</h1>
+      <p class="hero__subtitle">زیرعنوان توصیفی — [مرحله ۳]</p>
+      <div class="hero__actions">
+        <a href="#collections" class="btn btn--primary">کشف مجموعه</a>
+        <a href="#about"       class="btn btn--ghost">داستان ما</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ جداکننده ═══ -->
+  <div class="smoke-sep" aria-hidden="true">
+    <svg class="smoke smoke--md"><use href="#smoke"/></svg>
+  </div>
+
+  <!-- ═══ معرفی برند ═══ -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">برند ما</span>
+        <h2 class="section__title">معرفی رضوان</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__text">
+          <p class="about__paragraph">متن معرفی برند، داستان رضوان و ارزش‌های آن — [مرحله ۳]</p>
+          <p class="about__paragraph">بند دوم معرفی — مؤسس: علیرضا ابطحی — [مرحله ۳]</p>
+          <a href="#collections" class="btn btn--ghost">دیدن محصولات</a>
+        </div>
+        <div class="about__visual">
+          <div class="placeholder-box">گرافیک / تصویر معرفی برند</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- جداکننده -->
+  <div class="smoke-sep" aria-hidden="true">
+    <svg class="smoke smoke--md"><use href="#smoke"/></svg>
+  </div>
+
+  <!-- ═══ دسته‌بندی‌ها ═══ -->
+  <section class="section collections" id="collections">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">مجموعه‌ها</span>
+        <h2 class="section__title">دسته‌بندی محصولات</h2>
+      </div>
+      <div class="collections__grid">
+        <div class="collection-card">
+          <div class="collection-card__img placeholder-box">عطرهای ایرانی</div>
+          <h3 class="collection-card__title">ایرانی</h3>
+        </div>
+        <div class="collection-card">
+          <div class="collection-card__img placeholder-box">عطرهای عربی</div>
+          <h3 class="collection-card__title">عربی</h3>
+        </div>
+        <div class="collection-card">
+          <div class="collection-card__img placeholder-box">عطرهای اروپایی</div>
+          <h3 class="collection-card__title">اروپایی</h3>
+        </div>
+        <div class="collection-card">
+          <div class="collection-card__img placeholder-box">عطرهای آمریکایی</div>
+          <h3 class="collection-card__title">آمریکایی</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- جداکننده -->
+  <div class="smoke-sep" aria-hidden="true">
+    <svg class="smoke smoke--md"><use href="#smoke"/></svg>
+  </div>
+
+  <!-- ═══ محصولات نمونه ═══ -->
+  <section class="section products" id="products">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">محصولات</span>
+        <h2 class="section__title">نمونه محصولات</h2>
+      </div>
+      <div class="products__grid">
+        <div class="product-card">
+          <div class="product-card__img placeholder-box">بطری عطر</div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">نام محصول</h3>
+            <p class="product-card__origin">ایران</p>
+            <p class="product-card__price">۱۲۰,۰۰۰ تومان</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__img placeholder-box">بطری عطر</div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">نام محصول</h3>
+            <p class="product-card__origin">عربی</p>
+            <p class="product-card__price">۲۵۰,۰۰۰ تومان</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-card__img placeholder-box">بطری عطر</div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">نام محصول</h3>
+            <p class="product-card__origin">اروپایی</p>
+            <p class="product-card__price">۴۵۰,۰۰۰ تومان</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- جداکننده -->
+  <div class="smoke-sep" aria-hidden="true">
+    <svg class="smoke smoke--md"><use href="#smoke"/></svg>
+  </div>
+
+  <!-- ═══ نظرات مشتریان ═══ -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__label">نظرات</span>
+        <h2 class="section__title">مشتریان ما می‌گویند</h2>
+      </div>
+      <div class="reviews__grid">
+        <div class="review-card">
+          <p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p>
+          <span class="review-card__author">— نام مشتری</span>
+        </div>
+        <div class="review-card">
+          <p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p>
+          <span class="review-card__author">— نام مشتری</span>
+        </div>
+        <div class="review-card">
+          <p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p>
+          <span class="review-card__author">— نام مشتری</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ فوتر ═══ -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <svg class="smoke smoke--sm footer__smoke" aria-hidden="true"><use href="#smoke"/></svg>
+        <span class="footer__logo-fa">رضوان</span>
+        <span class="footer__logo-en">REZVAN</span>
+      </div>
+      <div class="footer__info">
+        <p>اطلاعات تماس — [مرحله ۵]</p>
+        <p>شبکه‌های اجتماعی — [مرحله ۵]</p>
+      </div>
+      <p class="footer__copy">© ۱۴۰۳ رضوان — تمامی حقوق محفوظ است.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
