@@ -99,8 +99,8 @@ demo-perfume/
 
 # Current Status
 
-The homepage foundation, approved image phase, customer reviews, and FAQ
-section are complete.
+The homepage foundation, approved image phase, customer reviews, FAQ,
+and full responsive homepage phase are complete.
 
 Completed:
 
@@ -123,6 +123,30 @@ Completed:
     `aria-controls`, labeled answer regions, and synchronized ARIA state
 -   FAQ includes a visible focus ring and a native keyboard-usable
     structure for Tab, Enter, and Space interaction
+-   Full homepage responsive implementation completed with centralized
+    rules in `css/responsive.css`
+-   Responsive breakpoints are organized at 1199px, 820px, 640px, and
+    359px
+-   RTL mobile navigation added with a CSS hamburger and a 44x44px touch
+    target
+-   Mobile navigation uses a dark Drawer, page Overlay, and body scroll
+    locking while open
+-   Mobile navigation supports closing from the hamburger, Overlay,
+    Escape key, and internal navigation links, with focus returned to
+    the menu button
+-   Mobile menu state is synchronized through `aria-expanded`,
+    `aria-controls`, and an accessible button label
+-   Hero composition is responsive so the approved model's face remains
+    visible while headline, subtitle, and CTAs stay readable on mobile
+-   Brand story, category grid, product grid, reviews, FAQ, lifestyle
+    banner, and Footer are responsive across desktop, tablet, and mobile
+-   Product cards use a single-column mobile layout while preserving the
+    approved 4/5 image ratio and complete product visuals
+-   Product filters wrap on small screens and retain 44px touch targets
+-   Long English product names use safe wrapping to prevent card and
+    viewport overflow
+-   Touch-specific hover handling and `prefers-reduced-motion` support
+    are included for menu, accordion, smooth scrolling, and motion effects
 -   Final image phase with 19 optimized WebP images stored in
     `assets/images/generated/`
 -   Hero image finalized with `hero-editorial-v7.webp`
@@ -176,6 +200,16 @@ Verification completed:
     closing the currently open item with a second click
 -   Browser Console checked after the Reviews and FAQ update with no
     warnings or errors
+-   Responsive layout verified at 1920x1080, 1440x900, 1280x800,
+    1024x768, 768x1024, 640px, 430x932, 390x844, 375x812, and 320x568
+-   No horizontal overflow found at any tested width
+-   Mobile navigation verified for hamburger open/close, Overlay close,
+    Escape close, internal-link close, scroll locking, ARIA state, and
+    focus return
+-   All 19 page images loaded successfully with no broken image detected
+-   Product filters and all six FAQ items reverified after responsive work
+-   Browser Console rechecked after the responsive phase with no warnings
+    or errors
 
 Not completed:
 
@@ -186,10 +220,6 @@ Not completed:
 -   Shop page
 -   Product detail page
 -   Product inquiry workflow and backend integration
--   Full responsive implementation and QA for tablet and mobile
-    breakpoints; this work is intentionally deferred to the final phase
--   Mobile navigation menu; intentionally deferred to the final
-    responsive phase
 -   Production SEO, accessibility audit, performance audit, and deployment
 
 ------------------------------------------------------------------------
@@ -198,13 +228,13 @@ Not completed:
 
 Recommended next stage:
 
-1.  Complete the final responsive phase, including tablet/mobile visual
-    QA and the mobile navigation menu.
-2.  Finalize production content: replace demo testimonials with verified
+1.  Finalize production content: replace demo testimonials with verified
     customer reviews and add contact details, social links, and the final
     brand identity.
-3.  Define the product inquiry flow behind `استعلام قیمت`.
-4.  After homepage approval, build the Shop and Product Detail pages.
+2.  Define the product inquiry flow behind `استعلام قیمت`.
+3.  After homepage approval, build the Shop and Product Detail pages.
+4.  Complete production SEO, accessibility and performance audits, then
+    prepare deployment.
 
 ------------------------------------------------------------------------
 

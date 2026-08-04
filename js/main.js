@@ -10,6 +10,53 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 
+/* ── منوی موبایل ── */
+const menuToggle = document.querySelector('.nav__toggle');
+const menu = document.getElementById('primary-navigation');
+const menuOverlay = document.querySelector('.nav__overlay');
+const menuLinks = menu.querySelectorAll('.nav__link');
+const mobileMenuQuery = window.matchMedia('(max-width: 820px)');
+
+const setMenuState = (isOpen, returnFocus = true) => {
+  document.body.classList.toggle('menu-open', isOpen);
+  nav.classList.toggle('menu-open', isOpen);
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? 'بستن منوی اصلی' : 'بازکردن منوی اصلی');
+
+  if (isOpen) {
+    requestAnimationFrame(() => menuLinks[0].focus());
+  } else if (returnFocus && mobileMenuQuery.matches) {
+    menuToggle.focus();
+  }
+};
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+  setMenuState(!isOpen);
+});
+
+menuOverlay.addEventListener('click', () => setMenuState(false));
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (mobileMenuQuery.matches) {
+      setMenuState(false, false);
+      requestAnimationFrame(() => menuToggle.focus());
+    }
+  });
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+    setMenuState(false);
+  }
+});
+
+mobileMenuQuery.addEventListener('change', event => {
+  if (!event.matches) setMenuState(false, false);
+});
+
+
 /* ── فیلتر دسته‌بندی محصولات ── */
 const filterTabs  = document.querySelectorAll('.filter-tab');
 const productCards = document.querySelectorAll('.product-card');

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/base.css?v=2">
   <link rel="stylesheet" href="css/layout.css?v=3">
   <link rel="stylesheet" href="css/components.css?v=4">
+  <link rel="stylesheet" href="css/responsive.css?v=1">
 </head>
 <body>
   <svg style="display:none" aria-hidden="true">
@@ -20,18 +21,25 @@
 
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <nav class="nav__menu" aria-label="ناوبری اصلی">
+      <nav class="nav__menu" id="primary-navigation" aria-label="ناوبری اصلی">
         <a href="#about" class="nav__link">برند</a>
         <a href="#collections" class="nav__link">مجموعه‌ها</a>
         <a href="#products" class="nav__link">محصولات</a>
         <a href="#reviews" class="nav__link">نظرات</a>
+        <a href="#faq" class="nav__link">سؤالات پرتکرار</a>
         <a href="#footer" class="nav__link">تماس</a>
       </nav>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="بازکردن منوی اصلی">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
       <a href="#hero" class="nav__logo" aria-label="صفحه اصلی رضوان">
         <span class="nav__logo-fa">رضوان</span>
         <span class="nav__logo-en">REZVAN</span>
       </a>
     </div>
+    <button class="nav__overlay" type="button" tabindex="-1" aria-hidden="true"></button>
   </header>
 
   <section class="hero" id="hero">
@@ -296,6 +304,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=4"></script>
 </body>
 </html>
