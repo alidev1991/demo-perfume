@@ -47,14 +47,14 @@
 .collections__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--sp-md);
+  gap: clamp(18px, 1.6vw, 28px);
 }
 
 /* ─ گرید محصولات (۳ ستون) ─ */
 .products__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-md);
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(18px, 1.6vw, 28px);
 }
 
 /* ─ گرید نظرات (۳ ستون) ─ */

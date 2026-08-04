@@ -7,132 +7,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/base.css?v=2">
+  <link rel="stylesheet" href="css/layout.css?v=3">
+  <link rel="stylesheet" href="css/components.css?v=3">
 </head>
 <body>
-
-  <!-- ═══ تعریف SVGهای برند ═══ -->
   <svg style="display:none" aria-hidden="true">
-    <!-- امضای بصری: دود عود -->
     <symbol id="smoke" viewBox="0 0 40 100" preserveAspectRatio="xMidYMid meet">
-      <path d="M20 98 C36 82 36 64 20 50 C4 36 4 18 20 2"
-            stroke="currentColor" stroke-width="1.5" fill="none"
-            stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <!-- بطری عطر شیشه‌ای (رنگ مایع از CSS variables) -->
-    <symbol id="bottle" viewBox="0 0 100 210" fill="none">
-      <defs>
-        <!-- درپوش متالیک طلایی -->
-        <linearGradient id="btl-cap" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"   stop-color="#5C3E0E"/>
-          <stop offset="25%"  stop-color="#DEC07E"/>
-          <stop offset="55%"  stop-color="#C8A060"/>
-          <stop offset="100%" stop-color="#5C3E0E"/>
-        </linearGradient>
-        <!-- افکت شیشه (هایلایت افقی) -->
-        <linearGradient id="btl-glass" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%"   stop-color="#fff" stop-opacity="0.22"/>
-          <stop offset="10%"  stop-color="#fff" stop-opacity="0.07"/>
-          <stop offset="50%"  stop-color="#fff" stop-opacity="0.01"/>
-          <stop offset="90%"  stop-color="#fff" stop-opacity="0.05"/>
-          <stop offset="100%" stop-color="#fff" stop-opacity="0.16"/>
-        </linearGradient>
-        <!-- رنگ مایع (از CSS variable تنظیم می‌شود) -->
-        <linearGradient id="btl-liquid" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="var(--liq-top, #C8A96E)" stop-opacity="0.82"/>
-          <stop offset="100%" stop-color="var(--liq-bot, #8A6010)" stop-opacity="0.96"/>
-        </linearGradient>
-        <!-- سایه زیر بطری -->
-        <radialGradient id="btl-shadow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%"   stop-color="#000" stop-opacity="0.55"/>
-          <stop offset="100%" stop-color="#000" stop-opacity="0"/>
-        </radialGradient>
-        <!-- caustic light (نقطه درخشان) -->
-        <radialGradient id="btl-caustic" cx="32%" cy="30%" r="68%">
-          <stop offset="0%"   stop-color="#fff" stop-opacity="0.2"/>
-          <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-        </radialGradient>
-        <filter id="btl-blur" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="3"/>
-        </filter>
-        <!-- کلیپ داخل بدنه -->
-        <clipPath id="btl-clip">
-          <rect x="17" y="67" width="66" height="132" rx="13"/>
-        </clipPath>
-      </defs>
-
-      <!-- سایه زیر بطری -->
-      <ellipse cx="50" cy="206" rx="31" ry="7" fill="url(#btl-shadow)"/>
-
-      <!-- ── درپوش ── -->
-      <rect x="33" y="4" width="34" height="16" rx="4" fill="url(#btl-cap)"/>
-      <!-- هایلایت درپوش -->
-      <rect x="36" y="6" width="12" height="4" rx="2" fill="#fff" fill-opacity="0.28"/>
-
-      <!-- ── گردن بطری ── -->
-      <rect x="39" y="20" width="22" height="26" rx="2" fill="#0E0A06" fill-opacity="0.55"/>
-      <rect x="39" y="20" width="22" height="26" rx="2" fill="url(#btl-glass)"/>
-      <rect x="39" y="20" width="22" height="26" rx="2" stroke="#fff" stroke-opacity="0.14" stroke-width="0.6" fill="none"/>
-
-      <!-- ── شانه (ذوزنقه) ── -->
-      <path d="M39 46 L16 66 L84 66 L61 46 Z" fill="#0E0A06" fill-opacity="0.45"/>
-      <path d="M39 46 L16 66 L84 66 L61 46 Z" fill="url(#btl-glass)"/>
-      <path d="M39 46 L16 66 L84 66 L61 46 Z" stroke="#fff" stroke-opacity="0.1" stroke-width="0.5" fill="none"/>
-
-      <!-- ── بدنه اصلی — شیشه تیره ── -->
-      <rect x="16" y="66" width="68" height="134" rx="14" fill="#0E0A06" fill-opacity="0.42"/>
-      <rect x="16" y="66" width="68" height="134" rx="14" stroke="#fff" stroke-opacity="0.18" stroke-width="0.8" fill="none"/>
-
-      <!-- ── مایع داخل شیشه ── -->
-      <rect x="17" y="118" width="66" height="82" fill="url(#btl-liquid)" clip-path="url(#btl-clip)"/>
-      <!-- سطح مایع (منیسکوس) -->
-      <ellipse cx="50" cy="118" rx="33" ry="4.5" fill="var(--liq-mid, #C8A96E)" fill-opacity="0.55" clip-path="url(#btl-clip)"/>
-
-      <!-- ── لایه شیشه روی مایع ── -->
-      <rect x="16" y="66" width="68" height="134" rx="14" fill="url(#btl-glass)"/>
-
-      <!-- ── هایلایت لبه چپ (نور ورودی) ── -->
-      <rect x="18" y="68" width="8" height="128" rx="4" fill="#fff" fill-opacity="0.13"/>
-      <rect x="18" y="68" width="3" height="128" rx="1.5" fill="#fff" fill-opacity="0.11"/>
-
-      <!-- ── هایلایت ظریف لبه راست ── -->
-      <rect x="75" y="72" width="5" height="118" rx="2.5" fill="#fff" fill-opacity="0.055"/>
-
-      <!-- ── caustic light (نقطه نور) ── -->
-      <ellipse cx="31" cy="90" rx="13" ry="9" fill="url(#btl-caustic)" filter="url(#btl-blur)"/>
-
-      <!-- ── ناحیه برچسب (لیبل) ── -->
-      <rect x="26" y="124" width="48" height="52" rx="3" fill="#fff" fill-opacity="0.025" stroke="#fff" stroke-opacity="0.11" stroke-width="0.5"/>
-      <rect x="33" y="139" width="34" height="2" rx="1"    fill="#fff" fill-opacity="0.26"/>
-      <rect x="35" y="145" width="30" height="1.4" rx="0.7" fill="#fff" fill-opacity="0.17"/>
-      <rect x="37" y="150" width="26" height="1.4" rx="0.7" fill="#fff" fill-opacity="0.12"/>
-
-      <!-- ── رفلکشن مورب (بازتاب نور) ── -->
-      <path d="M24 72 L40 106 L44 106 L28 72 Z" fill="#fff" fill-opacity="0.045"/>
+      <path d="M20 98 C36 82 36 64 20 50 C4 36 4 18 20 2" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </symbol>
   </svg>
 
-  <!-- ═══ ناوبار ═══ -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <nav class="nav__menu">
-        <a href="#about"       class="nav__link">برند</a>
+      <nav class="nav__menu" aria-label="ناوبری اصلی">
+        <a href="#about" class="nav__link">برند</a>
         <a href="#collections" class="nav__link">مجموعه‌ها</a>
-        <a href="#products"    class="nav__link">محصولات</a>
-        <a href="#reviews"     class="nav__link">نظرات</a>
-        <a href="#footer"      class="nav__link">تماس</a>
+        <a href="#products" class="nav__link">محصولات</a>
+        <a href="#reviews" class="nav__link">نظرات</a>
+        <a href="#footer" class="nav__link">تماس</a>
       </nav>
-      <a href="/" class="nav__logo" aria-label="صفحه اصلی رضوان">
+      <a href="#hero" class="nav__logo" aria-label="صفحه اصلی رضوان">
         <span class="nav__logo-fa">رضوان</span>
         <span class="nav__logo-en">REZVAN</span>
       </a>
     </div>
   </header>
 
-  <!-- ═══ هیرو ═══ -->
   <section class="hero" id="hero">
+    <img class="hero__image" src="assets/images/generated/hero-editorial.webp" width="1920" height="1080" alt="فضای ادیتوری لوکس رضوان" fetchpriority="high" decoding="async">
+    <div class="hero__veil" aria-hidden="true"></div>
     <div class="hero__smoke-bg" aria-hidden="true">
       <svg class="smoke smoke--hero smoke--h1"><use href="#smoke"/></svg>
       <svg class="smoke smoke--hero smoke--h2"><use href="#smoke"/></svg>
@@ -144,17 +48,13 @@
       <p class="hero__subtitle">گزیده‌ای از بهترین عطرهای ایرانی، عربی، اروپایی و آمریکایی؛ برای لحظاتی که ارزشِ ماندن دارند.</p>
       <div class="hero__actions">
         <a href="#collections" class="btn btn--primary">کشف مجموعه</a>
-        <a href="#about"       class="btn btn--ghost">داستان ما</a>
+        <a href="#about" class="btn btn--ghost">داستان ما</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ جداکننده ═══ -->
-  <div class="smoke-sep" aria-hidden="true">
-    <svg class="smoke smoke--md"><use href="#smoke"/></svg>
-  </div>
+  <div class="smoke-sep" aria-hidden="true"><svg class="smoke smoke--md"><use href="#smoke"/></svg></div>
 
-  <!-- ═══ معرفی برند ═══ -->
   <section class="section about" id="about">
     <div class="container">
       <div class="section__head">
@@ -175,18 +75,14 @@
           <a href="#collections" class="btn btn--ghost">کشف مجموعه</a>
         </div>
         <div class="about__visual">
-          <div class="placeholder-box">تصویر / گرافیک معرفی برند</div>
+          <img class="about__image" src="assets/images/generated/about-atelier.webp" width="1200" height="1500" alt="میز کار عطرسازی با رز و زعفران" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- جداکننده -->
-  <div class="smoke-sep" aria-hidden="true">
-    <svg class="smoke smoke--md"><use href="#smoke"/></svg>
-  </div>
+  <div class="smoke-sep" aria-hidden="true"><svg class="smoke smoke--md"><use href="#smoke"/></svg></div>
 
-  <!-- ═══ دسته‌بندی‌ها ═══ -->
   <section class="section collections" id="collections">
     <div class="container">
       <div class="section__head">
@@ -194,340 +90,127 @@
         <h2 class="section__title">دسته‌بندی محصولات</h2>
       </div>
       <div class="collections__grid">
-
-        <div class="collection-card" data-filter="iranian">
-          <div class="collection-card__visual">
-            <div class="bottle-wrap bottle-wrap--iranian">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-          </div>
-          <div class="collection-card__info">
-            <h3 class="collection-card__title">عطرهای ایرانی</h3>
-            <p class="collection-card__tag">گل، عود، مشک، ادویه</p>
-          </div>
+        <div class="collection-card" data-filter="iranian" tabindex="0">
+          <div class="collection-card__visual"><img class="collection-card__image" src="assets/images/generated/category-iranian.webp" width="900" height="1200" alt="رز، زعفران و خاتم؛ نماد عطرهای ایرانی" loading="lazy" decoding="async"></div>
+          <div class="collection-card__info"><h3 class="collection-card__title">عطرهای ایرانی</h3><p class="collection-card__tag">گل، زعفران، چوب، ادویه</p></div>
         </div>
-
-        <div class="collection-card" data-filter="arabic">
-          <div class="collection-card__visual">
-            <div class="bottle-wrap bottle-wrap--arabic">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-          </div>
-          <div class="collection-card__info">
-            <h3 class="collection-card__title">عطرهای عربی</h3>
-            <p class="collection-card__tag">عود، کهربا، مسک، صمغ</p>
-          </div>
+        <div class="collection-card" data-filter="arabic" tabindex="0">
+          <div class="collection-card__visual"><img class="collection-card__image" src="assets/images/generated/category-arabic.webp" width="900" height="1200" alt="عود، کهربا و مبخره؛ نماد عطرهای عربی" loading="lazy" decoding="async"></div>
+          <div class="collection-card__info"><h3 class="collection-card__title">عطرهای عربی</h3><p class="collection-card__tag">عود، کهربا، مسک، صمغ</p></div>
         </div>
-
-        <div class="collection-card" data-filter="european">
-          <div class="collection-card__visual">
-            <div class="bottle-wrap bottle-wrap--european">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-          </div>
-          <div class="collection-card__info">
-            <h3 class="collection-card__title">عطرهای اروپایی</h3>
-            <p class="collection-card__tag">گل، سیتروس، چوب، وانیل</p>
-          </div>
+        <div class="collection-card" data-filter="european" tabindex="0">
+          <div class="collection-card__visual"><img class="collection-card__image" src="assets/images/generated/category-european.webp" width="900" height="1200" alt="رز سفید و ترنج؛ نماد عطرهای اروپایی" loading="lazy" decoding="async"></div>
+          <div class="collection-card__info"><h3 class="collection-card__title">عطرهای اروپایی</h3><p class="collection-card__tag">گل، سیتروس، چوب، وانیل</p></div>
         </div>
-
-        <div class="collection-card" data-filter="american">
-          <div class="collection-card__visual">
-            <div class="bottle-wrap bottle-wrap--american">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-          </div>
-          <div class="collection-card__info">
-            <h3 class="collection-card__title">عطرهای آمریکایی</h3>
-            <p class="collection-card__tag">چوب، کهربا، مشک، اسانس</p>
-          </div>
+        <div class="collection-card" data-filter="american" tabindex="0">
+          <div class="collection-card__visual"><img class="collection-card__image" src="assets/images/generated/category-american.webp" width="900" height="1200" alt="چرم و چوب سدر؛ نماد عطرهای آمریکایی" loading="lazy" decoding="async"></div>
+          <div class="collection-card__info"><h3 class="collection-card__title">عطرهای آمریکایی</h3><p class="collection-card__tag">چرم، چوب، کهربا، مشک</p></div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- جداکننده -->
-  <div class="smoke-sep" aria-hidden="true">
-    <svg class="smoke smoke--md"><use href="#smoke"/></svg>
-  </div>
+  <section class="scent-ritual" aria-label="آیین انتخاب رایحه">
+    <img class="scent-ritual__image" src="assets/images/generated/scent-ritual.webp" width="1800" height="720" alt="چیدمان آیینی و لوکس انتخاب عطر" loading="lazy" decoding="async">
+    <div class="scent-ritual__overlay"></div>
+    <div class="container scent-ritual__content">
+      <span class="section__label">آیین رایحه</span>
+      <p>هر شیشه، آغاز یک روایت شخصی است.</p>
+    </div>
+  </section>
 
-  <!-- ═══ محصولات ═══ -->
+  <div class="smoke-sep" aria-hidden="true"><svg class="smoke smoke--md"><use href="#smoke"/></svg></div>
+
   <section class="section products" id="products">
     <div class="container">
       <div class="section__head">
         <span class="section__label">محصولات</span>
         <h2 class="section__title">انتخابِ رضوان</h2>
       </div>
-
-      <!-- فیلتر دسته‌بندی -->
-      <div class="filter-tabs" role="tablist">
-        <button class="filter-tab active" data-filter="all"      role="tab">همه</button>
-        <button class="filter-tab"        data-filter="iranian"  role="tab">ایرانی</button>
-        <button class="filter-tab"        data-filter="arabic"   role="tab">عربی</button>
-        <button class="filter-tab"        data-filter="european" role="tab">اروپایی</button>
-        <button class="filter-tab"        data-filter="american" role="tab">آمریکایی</button>
+      <div class="filter-tabs" role="tablist" aria-label="فیلتر محصولات">
+        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">همه</button>
+        <button class="filter-tab" data-filter="iranian" role="tab" aria-selected="false">ایرانی</button>
+        <button class="filter-tab" data-filter="arabic" role="tab" aria-selected="false">عربی</button>
+        <button class="filter-tab" data-filter="european" role="tab" aria-selected="false">اروپایی</button>
+        <button class="filter-tab" data-filter="american" role="tab" aria-selected="false">آمریکایی</button>
       </div>
-
       <div class="products__grid" id="products-grid">
+        <article class="product-card" data-category="iranian">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-f713.webp" width="900" height="1200" alt="عطر Jacsaf F713 زنانه" loading="lazy" decoding="async"><span class="product-card__badge">ایرانی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Jacsaf F713 for Women</h3><p class="product-card__desc">ادوپرفیوم زنانه با ارائه‌ای روشن و ظریف</p><div class="product-card__footer"><span class="product-card__volume">EDP · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
+        <article class="product-card" data-category="iranian">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-sweet-love.webp?v=2" width="900" height="1200" alt="عطر Jacsaf Sweet Love زنانه" loading="lazy" decoding="async"><span class="product-card__badge">ایرانی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Jacsaf Sweet Love for Women</h3><p class="product-card__desc">رایحه‌ای شیرین و گلی با حال‌وهوای لطیف</p><div class="product-card__footer"><span class="product-card__volume">EDP · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
+        <article class="product-card" data-category="iranian">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-gladiator.webp" width="900" height="1200" alt="عطر Jacsaf Gladiator مردانه" loading="lazy" decoding="async"><span class="product-card__badge">ایرانی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Jacsaf Gladiator for Men</h3><p class="product-card__desc">ترکیبی مردانه با شخصیت گرم و قدرتمند</p><div class="product-card__footer"><span class="product-card__volume">EDP · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
 
-        <!-- ─ ایرانی ─ -->
-        <div class="product-card" data-category="iranian">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--iranian">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">ایرانی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">گلِ محمدی</h3>
-            <p class="product-card__desc">عطری به شیرینی یک باغ بهاری در سپیده‌دم</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۵۰ میلی‌لیتر</span>
-              <span class="product-card__price">۱۸۵,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
+        <article class="product-card" data-category="arabic">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-interlude.webp" width="900" height="1200" alt="عطر Amouage Interlude Man" loading="lazy" decoding="async"><span class="product-card__badge">عربی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Amouage Interlude Man</h3><p class="product-card__desc">دودی، عمیق و باشکوه برای حضوری ماندگار</p><div class="product-card__footer"><span class="product-card__volume">EDP · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
+        <article class="product-card" data-category="arabic">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-madawi.webp" width="900" height="1200" alt="عطر Arabian Oud Madawi" loading="lazy" decoding="async"><span class="product-card__badge">عربی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Arabian Oud Madawi</h3><p class="product-card__desc">آمیزه‌ای نرم از گل، میوه و چوب‌های گرم</p><div class="product-card__footer"><span class="product-card__volume">EDP · 90ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
+        <article class="product-card" data-category="arabic">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-khamrah.webp" width="900" height="1200" alt="عطر Lattafa Khamrah" loading="lazy" decoding="async"><span class="product-card__badge">عربی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Lattafa Khamrah</h3><p class="product-card__desc">گرم، ادویه‌ای و شیرین با امضای کهربایی</p><div class="product-card__footer"><span class="product-card__volume">EDP · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
 
-        <div class="product-card" data-category="iranian">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--iranian">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">ایرانی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">عودِ شیراز</h3>
-            <p class="product-card__desc">گرمای عود و رازِ تیره‌ی جنگل‌های جنوب ایران</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۱۰۰ میلی‌لیتر</span>
-              <span class="product-card__price">۴۳۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
+        <article class="product-card" data-category="european">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-bleu.webp" width="900" height="1200" alt="عطر Bleu de Chanel" loading="lazy" decoding="async"><span class="product-card__badge">اروپایی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">CHANEL Bleu de Chanel</h3><p class="product-card__desc">آروماتیک و چوبی با حسی تمیز و مدرن</p><div class="product-card__footer"><span class="product-card__volume">EDP · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
+        <article class="product-card" data-category="european">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-jadore.webp" width="900" height="1200" alt="عطر Dior J'adore" loading="lazy" decoding="async"><span class="product-card__badge">اروپایی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Dior J’adore</h3><p class="product-card__desc">دسته‌گلی درخشان با جلوه‌ای زنانه و طلایی</p><div class="product-card__footer"><span class="product-card__volume">EDP · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
+        <article class="product-card" data-category="european">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-eros.webp" width="900" height="1200" alt="عطر Versace Eros Pour Homme" loading="lazy" decoding="async"><span class="product-card__badge">اروپایی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Versace Eros Pour Homme</h3><p class="product-card__desc">تازه، پرانرژی و جسور با امضای مدیترانه‌ای</p><div class="product-card__footer"><span class="product-card__volume">EDT · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
 
-        <div class="product-card" data-category="iranian">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--iranian">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">ایرانی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">نسیمِ البرز</h3>
-            <p class="product-card__desc">تازگی کوهستان و هوای صبحگاهی در هر نفس</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۷۵ میلی‌لیتر</span>
-              <span class="product-card__price">۲۶۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- ─ عربی ─ -->
-        <div class="product-card" data-category="arabic">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--arabic">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">عربی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">مسکِ الذهب</h3>
-            <p class="product-card__desc">سفیدترین مسک از قلبِ بیابان‌های عربستان</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۵۰ میلی‌لیتر</span>
-              <span class="product-card__price">۳۸۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="arabic">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--arabic">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">عربی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">عودِ الملک</h3>
-            <p class="product-card__desc">رایحه‌ی شاهانه، تاجِ عطرهای خاورمیانه</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۱۰۰ میلی‌لیتر</span>
-              <span class="product-card__price">۶۸۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="arabic">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--arabic">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">عربی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">خلوصِ عربی</h3>
-            <p class="product-card__desc">ناب‌ترین ترکیب کهربا و صمغ از دل صحرا</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۷۵ میلی‌لیتر</span>
-              <span class="product-card__price">۴۹۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- ─ اروپایی ─ -->
-        <div class="product-card" data-category="european">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--european">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">اروپایی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">رُز دو پاری</h3>
-            <p class="product-card__desc">یک گلبرگ پاریسی، نرم بر روی پوست</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۵۰ میلی‌لیتر</span>
-              <span class="product-card__price">۸۴۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="european">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--european">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">اروپایی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">ولوت نویت</h3>
-            <p class="product-card__desc">شبِ مخملی با گرمای چوب‌های تاریک اروپا</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۱۰۰ میلی‌لیتر</span>
-              <span class="product-card__price">۱,۲۰۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="european">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--european">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">اروپایی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">آمبر بلان</h3>
-            <p class="product-card__desc">ظریف‌ترین کهربای سفید از قلبِ میلان</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۷۵ میلی‌لیتر</span>
-              <span class="product-card__price">۹۶۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- ─ آمریکایی ─ -->
-        <div class="product-card" data-category="american">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--american">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">آمریکایی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">نیویورک نایت</h3>
-            <p class="product-card__desc">عطری با روحِ شهرِ بی‌خواب و خیابان‌های شبانه</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۱۰۰ میلی‌لیتر</span>
-              <span class="product-card__price">۸۸۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="american">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--american">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">آمریکایی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">وودلند</h3>
-            <p class="product-card__desc">بوی جنگل پس از باران، آرامشِ بی‌انتها</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۵۰ میلی‌لیتر</span>
-              <span class="product-card__price">۶۴۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="american">
-          <div class="product-card__visual">
-            <div class="bottle-wrap bottle-wrap--american">
-              <svg class="bottle-svg" aria-hidden="true"><use href="#bottle"/></svg>
-            </div>
-            <span class="product-card__badge">آمریکایی</span>
-          </div>
-          <div class="product-card__body">
-            <h3 class="product-card__name">گلدن اَمبر</h3>
-            <p class="product-card__desc">گرمایِ کهربایی عمیق از دل غربِ دور</p>
-            <div class="product-card__footer">
-              <span class="product-card__volume">۷۵ میلی‌لیتر</span>
-              <span class="product-card__price">۷۲۰,۰۰۰ تومان</span>
-            </div>
-          </div>
-        </div>
-
+        <article class="product-card" data-category="american">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-ombre-leather.webp" width="900" height="1200" alt="عطر Tom Ford Ombré Leather" loading="lazy" decoding="async"><span class="product-card__badge">آمریکایی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">TOM FORD Ombré Leather</h3><p class="product-card__desc">چرم تیره و ادویه با حال‌وهوای آزاد و معاصر</p><div class="product-card__footer"><span class="product-card__volume">EDP · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
+        <article class="product-card" data-category="american">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-my-euphoria.webp" width="900" height="1200" alt="عطر Calvin Klein My Euphoria زنانه" loading="lazy" decoding="async"><span class="product-card__badge">آمریکایی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Calvin Klein My Euphoria for Women</h3><p class="product-card__desc">گلی، میوه‌ای و مخملی با بطری سرخ شاخص</p><div class="product-card__footer"><span class="product-card__volume">EDP · 100ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
+        <article class="product-card" data-category="american">
+          <div class="product-card__visual"><img class="product-card__image" src="assets/images/generated/product-polo67.webp" width="900" height="1200" alt="عطر Ralph Lauren Polo Est. 67" loading="lazy" decoding="async"><span class="product-card__badge">آمریکایی</span></div>
+          <div class="product-card__body"><h3 class="product-card__name" dir="ltr">Ralph Lauren Polo Est. 67</h3><p class="product-card__desc">تازه و چوبی با روحی ورزشی و اصیل</p><div class="product-card__footer"><span class="product-card__volume">EDT · 125ml</span><span class="product-card__price">استعلام قیمت</span></div></div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- جداکننده -->
-  <div class="smoke-sep" aria-hidden="true">
-    <svg class="smoke smoke--md"><use href="#smoke"/></svg>
-  </div>
+  <div class="smoke-sep" aria-hidden="true"><svg class="smoke smoke--md"><use href="#smoke"/></svg></div>
 
-  <!-- ═══ نظرات مشتریان ═══ -->
   <section class="section reviews" id="reviews">
     <div class="container">
-      <div class="section__head">
-        <span class="section__label">نظرات</span>
-        <h2 class="section__title">مشتریان ما می‌گویند</h2>
-      </div>
+      <div class="section__head"><span class="section__label">نظرات</span><h2 class="section__title">مشتریان ما می‌گویند</h2></div>
       <div class="reviews__grid">
-        <div class="review-card">
-          <p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p>
-          <span class="review-card__author">— نام مشتری</span>
-        </div>
-        <div class="review-card">
-          <p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p>
-          <span class="review-card__author">— نام مشتری</span>
-        </div>
-        <div class="review-card">
-          <p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p>
-          <span class="review-card__author">— نام مشتری</span>
-        </div>
+        <div class="review-card"><p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p><span class="review-card__author">— نام مشتری</span></div>
+        <div class="review-card"><p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p><span class="review-card__author">— نام مشتری</span></div>
+        <div class="review-card"><p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p><span class="review-card__author">— نام مشتری</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ فوتر ═══ -->
   <footer class="footer" id="footer">
     <div class="container footer__inner">
-      <div class="footer__brand">
-        <svg class="smoke smoke--sm footer__smoke" aria-hidden="true"><use href="#smoke"/></svg>
-        <span class="footer__logo-fa">رضوان</span>
-        <span class="footer__logo-en">REZVAN</span>
-      </div>
-      <div class="footer__info">
-        <p>اطلاعات تماس — [مرحله ۵]</p>
-        <p>شبکه‌های اجتماعی — [مرحله ۵]</p>
-      </div>
+      <div class="footer__brand"><svg class="smoke smoke--sm footer__smoke" aria-hidden="true"><use href="#smoke"/></svg><span class="footer__logo-fa">رضوان</span><span class="footer__logo-en">REZVAN</span></div>
+      <div class="footer__info"><p>اطلاعات تماس — [مرحله ۵]</p><p>شبکه‌های اجتماعی — [مرحله ۵]</p></div>
       <p class="footer__copy">© ۱۴۰۳ رضوان — تمامی حقوق محفوظ است.</p>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>

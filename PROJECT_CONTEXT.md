@@ -99,23 +99,69 @@ demo-perfume/
 
 # Current Status
 
-Completed: - Requirements gathering - Business understanding - Design
-direction - Technology decision
+The homepage foundation and the approved image phase are complete.
 
-Not completed: - HTML implementation - CSS system - Components - Product
-data - Pages
+Completed:
+
+-   Requirements gathering, business context, design direction, and
+    technology decision
+-   RTL Persian homepage structure and the core visual system
+-   Header, Hero, brand introduction, category, lifestyle banner,
+    product grid, reviews placeholder, and footer placeholder sections
+-   Product category filtering with keyboard-accessible category cards
+-   Final image phase with 19 optimized WebP images stored in
+    `assets/images/generated/`
+-   Hero image replacement with the final editorial visual
+-   Brand introduction image replacement with the final atelier visual
+-   Addition of four final category images: Iranian, Arabic, European,
+    and American
+-   Replacement of the product placeholders with 12 real perfume
+    products and their final product visuals
+-   Product pricing state changed to `استعلام قیمت`
+-   Category and product image areas corrected to a `4 / 5` aspect ratio
+-   Four-column desktop product grid with equal-height product cards
+-   Product images use `object-fit: contain` so bottles and packaging
+    remain complete; category images use `object-fit: cover`
+
+Image inventory:
+
+-   1 Hero image
+-   1 brand introduction image
+-   1 lifestyle / scent ritual banner
+-   4 category images
+-   12 product images
+-   Total: 19 WebP images
+
+Verification completed:
+
+-   Desktop layout checked at 1440px and 1920px widths
+-   All four category cards are equal in size
+-   All 12 product cards have equal height and complete bottle visuals
+-   Filters verified: Iranian, Arabic, European, and American each show
+    3 products; All shows 12 products
+-   Browser Console checked with no warnings or errors
+
+Not completed:
+
+-   Final client-approved brand name and production identity
+-   Final customer reviews and contact / social information
+-   Shop page
+-   Product detail page
+-   Product inquiry workflow and backend integration
+-   Full responsive QA for tablet and mobile breakpoints
+-   Production SEO, accessibility audit, performance audit, and deployment
 
 ------------------------------------------------------------------------
 
 # Next Steps
 
-Stage 1: Create project foundation: - folders - base HTML files - CSS
-architecture - RTL setup
+Recommended next stage:
 
-Stage 2: Create design system: - colors - typography - spacing -
-buttons - cards
-
-Stage 3: Build Header and Hero section.
+1.  Finalize the homepage content, especially customer reviews, contact
+    details, social links, and the final brand identity.
+2.  Complete responsive behavior and visual QA for tablet and mobile.
+3.  Define the product inquiry flow behind `استعلام قیمت`.
+4.  After homepage approval, build the Shop and Product Detail pages.
 
 ------------------------------------------------------------------------
 

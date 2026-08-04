@@ -16,8 +16,12 @@ const productCards = document.querySelectorAll('.product-card');
 
 filterTabs.forEach(tab => {
   tab.addEventListener('click', () => {
-    filterTabs.forEach(t => t.classList.remove('active'));
+    filterTabs.forEach(t => {
+      t.classList.remove('active');
+      t.setAttribute('aria-selected', 'false');
+    });
     tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
 
     const filter = tab.dataset.filter;
 
@@ -33,13 +37,21 @@ filterTabs.forEach(tab => {
 const collectionCards = document.querySelectorAll('.collection-card');
 
 collectionCards.forEach(card => {
-  card.addEventListener('click', () => {
+  const selectCollection = () => {
     const filter = card.dataset.filter;
     const matchingTab = document.querySelector(`.filter-tab[data-filter="${filter}"]`);
 
     if (matchingTab) {
       matchingTab.click();
       document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  card.addEventListener('click', selectCollection);
+  card.addEventListener('keydown', event => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      selectCollection();
     }
   });
 });

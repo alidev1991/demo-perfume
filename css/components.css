@@ -132,6 +132,23 @@
     linear-gradient(155deg, #1C140A 0%, #0D0A07 48%, #080604 100%);
 }
 
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 6, 4, 0.12) 0%, rgba(8, 6, 4, 0.44) 45%, rgba(8, 6, 4, 0.88) 100%),
+    linear-gradient(0deg, rgba(8, 6, 4, 0.46) 0%, transparent 45%, rgba(8, 6, 4, 0.16) 100%);
+}
+
 .hero__smoke-bg {
   position: absolute;
   inset: 0;
@@ -302,6 +319,15 @@
   aspect-ratio: 1 / 1.2;
 }
 
+.about__image {
+  width: min(100%, 440px);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28);
+}
+
 
 /* ══════════════════════════════
    بطری عطر SVG (عنصر بصری مشترک)
@@ -377,6 +403,8 @@
    کارت دسته‌بندی
    ══════════════════════════════ */
 .collection-card {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border-radius: var(--radius);
   cursor: pointer;
@@ -391,14 +419,33 @@
 }
 
 .collection-card__visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
+}
+
+.collection-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.7s ease, filter 0.7s ease;
 }
 
 .collection-card:hover .bottle-svg {
   transform: scale(1.06) translateY(-4px);
 }
 
+.collection-card:hover .collection-card__image {
+  transform: scale(1.045);
+  filter: brightness(1.05);
+}
+
 .collection-card__info {
+  flex: 1;
   padding: var(--sp-sm) var(--sp-sm) var(--sp-md);
   text-align: center;
 }
@@ -465,7 +512,14 @@
   background-color: var(--c-bg-alt);
 }
 
+.collections > .container,
+.products > .container {
+  max-width: 1480px;
+}
+
 .product-card {
+  display: flex;
+  flex-direction: column;
   background-color: var(--c-card);
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
@@ -484,11 +538,30 @@
 
 .product-card__visual {
   position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
+  background-color: #17110c;
+}
+
+.product-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: clamp(6px, 0.6vw, 10px);
+  object-fit: contain;
+  object-position: center center;
+  transition: transform 0.65s ease, filter 0.65s ease;
 }
 
 .product-card:hover .bottle-svg {
   transform: scale(1.05) translateY(-6px);
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.035);
+  filter: brightness(1.04);
 }
 
 .product-card__badge {
@@ -508,16 +581,21 @@
 }
 
 .product-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: var(--sp-sm) var(--sp-sm) var(--sp-md);
 }
 
 .product-card__name {
+  min-height: 2.8em;
   font-size: 1rem;
   color: var(--c-gold-light);
   margin-bottom: 6px;
 }
 
 .product-card__desc {
+  min-height: 3.3em;
   font-size: 0.83rem;
   color: var(--c-text-muted);
   line-height: 1.65;
@@ -528,6 +606,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
   padding-top: var(--sp-sm);
   border-top: 1px solid var(--c-border);
 }
@@ -544,6 +623,44 @@
   font-weight: 600;
   color: var(--c-gold);
   font-size: 0.9rem;
+}
+
+.scent-ritual {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-block: 1px solid var(--c-border);
+}
+
+.scent-ritual__image,
+.scent-ritual__overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.scent-ritual__image {
+  object-fit: cover;
+}
+
+.scent-ritual__overlay {
+  background: linear-gradient(90deg, rgba(8, 6, 4, 0.82), rgba(8, 6, 4, 0.18) 58%, rgba(8, 6, 4, 0.64));
+}
+
+.scent-ritual__content {
+  position: relative;
+  z-index: 1;
+}
+
+.scent-ritual__content p {
+  max-width: 460px;
+  font-size: clamp(1.45rem, 3vw, 2.4rem);
+  font-weight: 600;
+  line-height: 1.55;
+  color: var(--c-gold-light);
 }
 
 
