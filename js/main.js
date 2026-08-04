@@ -55,3 +55,38 @@ collectionCards.forEach(card => {
     }
   });
 });
+
+
+/* ── سؤالات پرتکرار: فقط یک پاسخ باز ── */
+const faqItems = document.querySelectorAll('.faq__item');
+
+const closeFaqItem = item => {
+  const button = item.querySelector('.faq__question');
+  const answer = item.querySelector('.faq__answer');
+
+  item.classList.remove('is-open');
+  button.setAttribute('aria-expanded', 'false');
+  answer.setAttribute('aria-hidden', 'true');
+};
+
+faqItems.forEach(item => {
+  const button = item.querySelector('.faq__question');
+  const answer = item.querySelector('.faq__answer');
+
+  button.addEventListener('click', () => {
+    const isOpen = button.getAttribute('aria-expanded') === 'true';
+
+    faqItems.forEach(otherItem => {
+      if (otherItem !== item) closeFaqItem(otherItem);
+    });
+
+    if (isOpen) {
+      closeFaqItem(item);
+      return;
+    }
+
+    item.classList.add('is-open');
+    button.setAttribute('aria-expanded', 'true');
+    answer.setAttribute('aria-hidden', 'false');
+  });
+});

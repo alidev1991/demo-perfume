@@ -99,7 +99,8 @@ demo-perfume/
 
 # Current Status
 
-The homepage foundation and the approved image phase are complete.
+The homepage foundation, approved image phase, customer reviews, and FAQ
+section are complete.
 
 Completed:
 
@@ -107,8 +108,21 @@ Completed:
     technology decision
 -   RTL Persian homepage structure and the core visual system
 -   Header, Hero, brand introduction, category, lifestyle banner,
-    product grid, reviews placeholder, and footer placeholder sections
+    product grid, customer reviews, FAQ, and footer placeholder sections
 -   Product category filtering with keyboard-accessible category cards
+-   Customer reviews section completed with three natural testimonials
+    presented as demo sample content
+-   Demo testimonials are explicitly documented in the HTML and must be
+    replaced with real, verified customer reviews on the production site
+-   FAQ section added after customer reviews with six purchase-guidance
+    questions and answers
+-   FAQ implemented as a lightweight Vanilla JavaScript accordion
+-   At most one FAQ answer can remain open at any time, and clicking the
+    open question closes it again
+-   FAQ uses semantic `button` elements with `aria-expanded`,
+    `aria-controls`, labeled answer regions, and synchronized ARIA state
+-   FAQ includes a visible focus ring and a native keyboard-usable
+    structure for Tab, Enter, and Space interaction
 -   Final image phase with 19 optimized WebP images stored in
     `assets/images/generated/`
 -   Hero image finalized with `hero-editorial-v7.webp`
@@ -156,17 +170,26 @@ Verification completed:
 -   All 12 product cards have equal height and complete bottle visuals
 -   Filters verified: Iranian, Arabic, European, and American each show
     3 products; All shows 12 products
--   Browser Console checked after the final Hero update with no warnings
-    or errors
+-   Product filters reverified after the Reviews and FAQ work with the
+    same expected 3/3/3/3 and 12-product results
+-   All six FAQ items verified for opening, single-open behavior, and
+    closing the currently open item with a second click
+-   Browser Console checked after the Reviews and FAQ update with no
+    warnings or errors
 
 Not completed:
 
 -   Final client-approved brand name and production identity
--   Final customer reviews and contact / social information
+-   Replacement of the three demo testimonials with real, verified
+    customer reviews for the production site
+-   Final contact / social information
 -   Shop page
 -   Product detail page
 -   Product inquiry workflow and backend integration
--   Full responsive QA for tablet and mobile breakpoints
+-   Full responsive implementation and QA for tablet and mobile
+    breakpoints; this work is intentionally deferred to the final phase
+-   Mobile navigation menu; intentionally deferred to the final
+    responsive phase
 -   Production SEO, accessibility audit, performance audit, and deployment
 
 ------------------------------------------------------------------------
@@ -175,9 +198,11 @@ Not completed:
 
 Recommended next stage:
 
-1.  Finalize the homepage content, especially customer reviews, contact
-    details, social links, and the final brand identity.
-2.  Complete responsive behavior and visual QA for tablet and mobile.
+1.  Complete the final responsive phase, including tablet/mobile visual
+    QA and the mobile navigation menu.
+2.  Finalize production content: replace demo testimonials with verified
+    customer reviews and add contact details, social links, and the final
+    brand identity.
 3.  Define the product inquiry flow behind `استعلام قیمت`.
 4.  After homepage approval, build the Shop and Product Detail pages.
 

@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/base.css?v=2">
   <link rel="stylesheet" href="css/layout.css?v=3">
-  <link rel="stylesheet" href="css/components.css?v=3">
+  <link rel="stylesheet" href="css/components.css?v=4">
 </head>
 <body>
   <svg style="display:none" aria-hidden="true">
@@ -194,11 +194,96 @@
 
   <section class="section reviews" id="reviews">
     <div class="container">
-      <div class="section__head"><span class="section__label">نظرات</span><h2 class="section__title">مشتریان ما می‌گویند</h2></div>
+      <div class="section__head">
+        <span class="section__label">نظرات</span>
+        <h2 class="section__title">مشتریان ما می‌گویند</h2>
+      </div>
+      <!-- محتوای نمونه دمو؛ در سایت اصلی با نظرات تأییدشده مشتریان جایگزین شود. -->
       <div class="reviews__grid">
-        <div class="review-card"><p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p><span class="review-card__author">— نام مشتری</span></div>
-        <div class="review-card"><p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p><span class="review-card__author">— نام مشتری</span></div>
-        <div class="review-card"><p class="review-card__text">متن نظر مشتری — [مرحله ۵]</p><span class="review-card__author">— نام مشتری</span></div>
+        <article class="review-card">
+          <span class="review-card__quote" aria-hidden="true">“</span>
+          <blockquote class="review-card__text">برای انتخاب رایحه مردد بودم، اما توضیحاتی که درباره عطرها داده شد واقعاً کمکم کرد انتخاب مناسب‌تری داشته باشم. رایحه‌ای که گرفتم دقیقاً با چیزی که می‌خواستم هماهنگ بود.</blockquote>
+          <footer class="review-card__meta">
+            <cite class="review-card__author">سارا م.</cite>
+            <span class="review-card__experience">خرید عطر زنانه</span>
+          </footer>
+        </article>
+        <article class="review-card">
+          <span class="review-card__quote" aria-hidden="true">“</span>
+          <blockquote class="review-card__text">بسته‌بندی خیلی شیک و مرتب بود و محصول هم دقیقاً مطابق تصویری بود که دیده بودم. تجربه خرید خوبی داشتم و برای سفارش بعدی هم حتماً دوباره سر می‌زنم.</blockquote>
+          <footer class="review-card__meta">
+            <cite class="review-card__author">امیر ر.</cite>
+            <span class="review-card__experience">خرید عطر مردانه</span>
+          </footer>
+        </article>
+        <article class="review-card">
+          <span class="review-card__quote" aria-hidden="true">“</span>
+          <blockquote class="review-card__text">برای هدیه دنبال عطری بودم که هم ظاهر خوبی داشته باشد و هم انتخاب مطمئنی باشد. راهنمایی‌ها باعث شد خیلی سریع‌تر تصمیم بگیرم و هدیه هم واقعاً موردپسند قرار گرفت.</blockquote>
+          <footer class="review-card__meta">
+            <cite class="review-card__author">نگار ک.</cite>
+            <span class="review-card__experience">خرید برای هدیه</span>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="faq">
+    <div class="container faq__container">
+      <div class="section__head">
+        <span class="section__label">راهنمای خرید</span>
+        <h2 class="section__title">سؤالات پرتکرار</h2>
+        <p class="section__intro">پاسخ چند سؤال رایج برای انتخاب مطمئن‌تر عطر</p>
+      </div>
+      <div class="faq__list">
+        <article class="faq__item">
+          <h3 class="faq__heading">
+            <button class="faq__question" id="faq-question-1" type="button" aria-expanded="false" aria-controls="faq-answer-1">
+              <span>چطور عطر مناسب خودم را انتخاب کنم؟</span><span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq__answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1" aria-hidden="true"><div class="faq__answer-inner"><p>انتخاب عطر به سلیقه، فصل، موقعیت استفاده و رایحه‌هایی که قبلاً دوست داشته‌اید بستگی دارد. اگر بین چند گزینه مردد باشید، با توجه به رایحه‌های موردعلاقه و نوع استفاده می‌توان انتخاب‌ها را محدودتر کرد.</p></div></div>
+        </article>
+        <article class="faq__item">
+          <h3 class="faq__heading">
+            <button class="faq__question" id="faq-question-2" type="button" aria-expanded="false" aria-controls="faq-answer-2">
+              <span>تفاوت EDP و EDT چیست؟</span><span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq__answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" aria-hidden="true"><div class="faq__answer-inner"><p>عطرهای EDP معمولاً غلظت اسانس بیشتری دارند و اغلب ماندگاری بالاتری ارائه می‌دهند. EDT سبک‌تر است و می‌تواند برای استفاده روزانه یا هوای گرم انتخاب مناسب‌تری باشد. البته عملکرد نهایی هر عطر به فرمول آن هم بستگی دارد.</p></div></div>
+        </article>
+        <article class="faq__item">
+          <h3 class="faq__heading">
+            <button class="faq__question" id="faq-question-3" type="button" aria-expanded="false" aria-controls="faq-answer-3">
+              <span>چرا ماندگاری یک عطر روی افراد مختلف متفاوت است؟</span><span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq__answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" aria-hidden="true"><div class="faq__answer-inner"><p>نوع پوست، دمای هوا، میزان رطوبت، محل اسپری و حتی سبک زندگی روی ماندگاری عطر تأثیر دارند. معمولاً عطر روی پوست مرطوب و نقاط نبض عملکرد بهتری نشان می‌دهد.</p></div></div>
+        </article>
+        <article class="faq__item">
+          <h3 class="faq__heading">
+            <button class="faq__question" id="faq-question-4" type="button" aria-expanded="false" aria-controls="faq-answer-4">
+              <span>برای هدیه‌دادن چطور عطر انتخاب کنم؟</span><span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq__answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" aria-hidden="true"><div class="faq__answer-inner"><p>بهتر است سن، سبک پوشش، رایحه‌های موردعلاقه و موقعیت استفاده فرد را در نظر بگیرید. اگر شناخت دقیقی ندارید، رایحه‌های متعادل و پرطرفدار معمولاً انتخاب مطمئن‌تری هستند.</p></div></div>
+        </article>
+        <article class="faq__item">
+          <h3 class="faq__heading">
+            <button class="faq__question" id="faq-question-5" type="button" aria-expanded="false" aria-controls="faq-answer-5">
+              <span>چرا قیمت محصولات به‌صورت «استعلام قیمت» نمایش داده می‌شود؟</span><span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq__answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" aria-hidden="true"><div class="faq__answer-inner"><p>قیمت عطرهای خارجی ممکن است با توجه به موجودی و تغییرات بازار به‌روز شود. به همین دلیل، قیمت نهایی هنگام ثبت سفارش یا دریافت مشاوره اعلام خواهد شد.</p></div></div>
+        </article>
+        <article class="faq__item">
+          <h3 class="faq__heading">
+            <button class="faq__question" id="faq-question-6" type="button" aria-expanded="false" aria-controls="faq-answer-6">
+              <span>چگونه می‌توانم درباره یک محصول مشاوره بگیرم؟</span><span class="faq__icon" aria-hidden="true">+</span>
+            </button>
+          </h3>
+          <div class="faq__answer" id="faq-answer-6" role="region" aria-labelledby="faq-question-6" aria-hidden="true"><div class="faq__answer-inner"><p>در نسخه نهایی سایت، راه‌های ارتباطی فروشگاه در بخش تماس قرار می‌گیرند. می‌توانید نام محصول یا ویژگی رایحه موردنظرتان را ارسال کنید تا برای انتخاب مناسب‌تر راهنمایی شوید.</p></div></div>
+        </article>
       </div>
     </div>
   </section>
@@ -211,6 +296,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
