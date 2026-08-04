@@ -111,7 +111,19 @@ Completed:
 -   Product category filtering with keyboard-accessible category cards
 -   Final image phase with 19 optimized WebP images stored in
     `assets/images/generated/`
--   Hero image replacement with the final editorial visual
+-   Hero image finalized with `hero-editorial-v7.webp`
+-   The final Hero features an adult model with a natural, beautiful
+    face and a direct, confident gaze
+-   A closed, subtle, mysterious, and controlled smile was added while
+    preserving the model's natural facial identity
+-   The model wears a fully covered, very dark burgundy outfit with a
+    luxury Fashion and Editorial silhouette
+-   Facial, outfit, and environmental lighting are visually harmonized
+-   Extra smoke beside the model's face was removed for a cleaner image
+-   The advertising appeal is created through the model's gaze, subtle
+    smile, tailored outfit, and cinematic lighting
+-   The original `hero-editorial.webp` is retained only as a rollback
+    option
 -   Brand introduction image replacement with the final atelier visual
 -   Addition of four final category images: Iranian, Arabic, European,
     and American
@@ -131,15 +143,21 @@ Image inventory:
 -   4 category images
 -   12 product images
 -   Total: 19 WebP images
+-   1 additional original Hero rollback asset, not used by the page
 
 Verification completed:
 
 -   Desktop layout checked at 1440px and 1920px widths
+-   Final Hero v7 checked at 1440px and 1920px; headline, subtitle, and
+    both CTAs remain visible and readable at both widths
+-   Final Hero asset path verified as
+    `assets/images/generated/hero-editorial-v7.webp`
 -   All four category cards are equal in size
 -   All 12 product cards have equal height and complete bottle visuals
 -   Filters verified: Iranian, Arabic, European, and American each show
     3 products; All shows 12 products
--   Browser Console checked with no warnings or errors
+-   Browser Console checked after the final Hero update with no warnings
+    or errors
 
 Not completed:
 
